@@ -1,0 +1,28 @@
+{
+  "Ncrp": {
+    "prefix": "combitemp",
+    "body": [
+      "const int N = 3e5 + 5;",
+      "Mint fac[N];",
+      "",
+      "void pre()",
+      "{",
+      "\tfac[0] = 1;",
+      "\tfor (ll i = 1; i < N; i++)",
+      "\t{",
+      "\t\tfac[i] = fac[i - 1] * i;",
+      "\t}",
+      "}",
+      "",
+      "Mint ncrp(ll n, ll r)",
+      "{",
+      "\tif (r == 0)",
+      "\t\treturn 1;",
+      "\tif (r > n)",
+      "\t\treturn 0;",
+      "\treturn (fac[n]) / (fac[r] * fac[n - r]);",
+      "}"
+    ],
+    "description": "Log output to console"
+  }
+}
