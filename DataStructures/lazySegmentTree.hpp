@@ -4,7 +4,7 @@ struct segTree
     vll data, delta; // delta contains operations
     ll neutral;
 
-    void init(ll n)
+    segTree(ll n)
     {
         size = 1;
         while (size < n)
@@ -12,6 +12,24 @@ struct segTree
         data.assign(2 * size, 0ll); // fill depending on what data stores
         delta.assign(2 * size, 0ll);
         neutral = 0;
+    }
+
+    void build(const vll &a,ll node,ll l,ll r)
+    {
+        if(l == r)
+        {
+            data[node] = a[node-(size>>1)-1];
+            return;
+        }
+        ll mid = l+(r-l)/2;
+        ll left = 2*node+1;
+        ll right = 2*node+2;
+        build(a,left,l,mid);
+        build(a,right,mid+1,r);
+    }
+    void build(const vll &a)
+    {
+        build(a,0,0,a.size()-1);
     }
 
     ll op(ll a, ll b) // used in update , query , prop
