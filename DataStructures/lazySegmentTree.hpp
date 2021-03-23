@@ -14,22 +14,25 @@ struct segTree
         neutral = 0;
     }
 
-    void build(const vll &a,ll node,ll l,ll r)
+    void build(const vll &a, ll node, ll l, ll r)
     {
-        if(l == r)
+        if (l == r)
         {
-            data[node] = a[node-(size>>1)-1];
+            ll indx = node - (2 * size - 1) / 2;
+            if (indx >= a.size())
+                return;
+            data[node] = a[indx];
             return;
         }
-        ll mid = l+(r-l)/2;
-        ll left = 2*node+1;
-        ll right = 2*node+2;
-        build(a,left,l,mid);
-        build(a,right,mid+1,r);
+        ll mid = l + (r - l) / 2;
+        ll left = 2 * node + 1;
+        ll right = 2 * node + 2;
+        build(a, left, l, mid);
+        build(a, right, mid + 1, r);
     }
     void build(const vll &a)
     {
-        build(a,0,0,a.size()-1);
+        build(a, 0, 0, a.size() - 1);
     }
 
     ll op(ll a, ll b) // used in update , query , prop
@@ -37,16 +40,16 @@ struct segTree
         return a + b;
     }
 
-    ll op2(ll a,ll b)
+    ll op2(ll a, ll b)
     {
-        return min(a,b);
+        return min(a, b);
     }
 
     void update(ll node) // update parent
     {
         ll left = 2 * node + 1;
         ll right = 2 * node + 2;
-        data[node] = op2(data[left]+delta[left], data[right]+delta[right]);
+        data[node] = op2(data[left] + delta[left], data[right] + delta[right]);
     }
 
     void prop(ll node)
