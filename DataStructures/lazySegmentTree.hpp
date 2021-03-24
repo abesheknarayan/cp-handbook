@@ -9,8 +9,8 @@ struct segTree
         size = 1;
         while (size < n)
             size *= 2ll;
-        data.assign(2 * size, 0ll); // fill depending on what data stores
-        delta.assign(2 * size, 0ll);
+        data.assign(2 * size - 1, 0ll); // fill depending on what data stores
+        delta.assign(2 * size - 1, 0ll);
         neutral = 0;
     }
 
