@@ -16,7 +16,7 @@ struct DSU{
     }
     ll get(ll x)
     {
-        return (par[x]==x?x:get(par[x]));
+        return par[x] = (par[x]==x?x:get(par[x]));
     }
     bool sameset(ll x,ll y)
     {
