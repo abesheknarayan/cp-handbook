@@ -34,12 +34,12 @@ struct matrix
     {
       for (ll j = 0; j < 2; j++)
       {
-        res.mat[i][j]=(mat[i][j]+b.mat[i][j]);
+        res.mat[i][j] = (mat[i][j] + b.mat[i][j]);
       }
     }
     return res;
   }
-    matrix operator-(const matrix &b)
+  matrix operator-(const matrix &b)
   {
     matrix res;
     res.matrix_init(0, 0, 0, 0);
@@ -47,7 +47,7 @@ struct matrix
     {
       for (ll j = 0; j < 2; j++)
       {
-        res.mat[i][j]=(mat[i][j]-b.mat[i][j]);
+        res.mat[i][j] = (mat[i][j] - b.mat[i][j]);
       }
     }
     return res;

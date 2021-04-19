@@ -11,14 +11,14 @@ struct segTree
             size *= 2ll;
         data.assign(2 * size - 1, 0ll); // fill depending on what data stores
         delta.assign(2 * size - 1, 0ll);
-        intervals.assign(2*size-1,{-1,-1});
-        build(vll(n,0));
+        intervals.assign(2 * size - 1, {-1, -1});
+        build(vll(n, 0));
         neutral = 0;
     }
 
     void build(const vll &a, ll node, ll l, ll r)
     {
-        intervals[node] = {l,r};
+        intervals[node] = {l, r};
         if (l == r)
         {
             ll indx = node - (2 * size - 1) / 2;

@@ -36,7 +36,7 @@ struct NT
         }
         for (ll i = 2; i <= n; i++)
         {
-            for (ll j = 2 * i; j <= n; j+=i)
+            for (ll j = 2 * i; j <= n; j += i)
             {
                 phi[j] -= phi[i];
             }
@@ -47,8 +47,7 @@ struct NT
     // returns primes till n in O(n)
     vector<ll> liear_sieve(ll n)
     {
-        vll primes(n,1);
-        
+        vll primes(n, 1);
     }
 
     // TODO : Discrete log (Baby step giant step) , primitive roots
