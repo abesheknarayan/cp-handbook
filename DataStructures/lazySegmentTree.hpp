@@ -32,10 +32,11 @@ struct segTree
         ll right = 2 * node + 2;
         build(a, left, l, mid);
         build(a, right, mid + 1, r);
+        update(node);
     }
     void build(const vll &a)
     {
-        build(a, 0, 0, a.size() - 1);
+        build(a, 0, 0, size - 1);
     }
 
     ll op(ll a, ll b) // used in update , query , prop
