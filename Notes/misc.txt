@@ -1,0 +1,5 @@
+contains misc stuff
+
+
+1. online median / some thing on a subarray finding algo using multiset (refer USACO)
+

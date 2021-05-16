@@ -1,0 +1,19 @@
+Contains some standard dp tricks
+
+1-D dp tricks are mostly trivial
+
+
+1. dp[x][y] --> saw first x places and filled y of them
+
+   mostly dp[i][j] = f(dp[i-1][j-1] + something, dp[i-1][j]);
+
+2. dp[l][r] --> sub array dp 
+
+   mostly dp[i][j] = f(dp[i-1][j] + something, dp[i][j-1]);
+                      
+                            or
+          dp[i][j] = f(dp[i-1][j-1] + something); --> cases where you worry about two endpoints of the subarray
+
+3. In some game stuff,
+
+   We can write lambda function and use memoization

@@ -1,0 +1,35 @@
+Contains some standard graph tricks
+
+
+////////////////////////////////////////////////////////////
+//                                                        //
+//                                                        //
+//                       Graph                            //
+//                                                        //
+////////////////////////////////////////////////////////////
+
+1. Remember bridges and articulate points (removing any one of them would make the graph disconnected)
+
+2. Use bfs when in unweighted graphs , dont go for dijkstra everytime
+
+3. Use topsort / kosaraju if we need to just find scc , can also use tarjan if they ask for some lexico stuff
+
+4. if graph is DAG use topsort method to find shortest path
+
+5. [IMP]: for finding odd cycles just check if bipartite
+
+
+////////////////////////////////////////////////////////////
+//                                                        //
+//                                                        //
+//                       Tree                             //
+//                                                        //
+////////////////////////////////////////////////////////////
+
+
+1. sum of Xor on all paths --> just pairwise xor and then sum on xor value arr obtained from dfs
+
+2. Re rooting technique if asked for some associative couting on trees
+
+3. Segment tree subtree trick
+
