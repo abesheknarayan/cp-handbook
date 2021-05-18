@@ -3,3 +3,8 @@ contains misc stuff
 
 1. online median / some thing on a subarray finding algo using multiset (refer USACO)
 
+2. A very interesting trick , for merging 2 sets or multiset we can actually do it like dsu by inserting bigger onto smaller ones
+   
+   Ref : https://usaco.guide/plat/merging/#merging-data-structures
+   Problem : https://cses.fi/problemset/task/1139/
+

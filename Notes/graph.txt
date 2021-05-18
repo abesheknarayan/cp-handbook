@@ -18,6 +18,8 @@ Contains some standard graph tricks
 
 5. [IMP]: for finding odd cycles just check if bipartite
 
+6. [VVVVVVVVVV IMP]: Sometimes in graph questions involving finding distances/any associative function we can use "BINARY JUMPS METHOD" even if graph contains cycles.
+
 
 ////////////////////////////////////////////////////////////
 //                                                        //
