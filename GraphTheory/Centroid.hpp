@@ -1,23 +1,20 @@
 struct CentroidDecomp
 {
-  ll n, k1, k2;
+  ll n;
   vector<vll> v;
   vll marked; // for marking already visited centroids
   vll subtreeSize;
   long long ans;
-  o_tree tr;
-  // segTree sg;
+  vector<vector<pll>> levelCentroids;
  
-  CentroidDecomp(ll _n, ll _k1, ll _k2)
+  CentroidDecomp(ll _n)
   {
     n = _n;
-    k1 = _k1;
-    k2 = _k2;
     ans = 0;
     v = vector<vll>(n, vll());
     subtreeSize.assign(n, 1);
     marked.assign(n, 0);
-    // sg = segTree(2e5+5);
+    levelCentroids = vector<vector<pll>>(n,vector<pll>());
   }
  
   void addEdge(ll x, ll y)
@@ -64,8 +61,28 @@ struct CentroidDecomp
       marked[centroid_now] = 1;
  
       ll maxdep = -1;
+
       
       // do computations here
+
+      levelCentroids[centroid_now].push_back({centroid_now,0});
+      
+      function<void(ll,ll,ll)> compute = [&](ll xx,ll p,ll dep)
+      {
+        // debug("in node ",xx+1);
+        levelCentroids[xx].push_back({centroid_now,dep});
+        for(auto it:v[xx])
+        {
+          if(it == p || marked[it])continue;
+          compute(it,xx,dep+1);
+        }
+      };
+
+      for(auto it: v[centroid_now])
+      {
+        if(marked[it])continue;
+        compute(it,-1,1);
+      }
 
       for (auto next : v[centroid_now])
       {

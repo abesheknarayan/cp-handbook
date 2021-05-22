@@ -2,3 +2,11 @@ Contains stuff related to data structures
 
 
 1. HLD orz what a technique
+
+2. [HLD vs CD]:
+       
+        When given 2 nodes in a tree as query (function maybe something associatve) and some changes happen in the tree like modifying value of node , hld is used.
+        
+        Centroid Decomposition is used when you are given a node and a parameter (like distance or something) and to find function of all nodes satifying
+        the given condition
+        
