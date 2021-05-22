@@ -6,7 +6,7 @@ struct CentroidDecomp
   vll subtreeSize;
   long long ans;
   vector<vector<pll>> levelCentroids;
- 
+
   CentroidDecomp(ll _n)
   {
     n = _n;
@@ -14,15 +14,15 @@ struct CentroidDecomp
     v = vector<vll>(n, vll());
     subtreeSize.assign(n, 1);
     marked.assign(n, 0);
-    levelCentroids = vector<vector<pll>>(n,vector<pll>());
+    levelCentroids = vector<vector<pll>>(n, vector<pll>());
   }
- 
+
   void addEdge(ll x, ll y)
   {
     v[x].push_back(y);
     v[y].push_back(x);
   }
- 
+
   ll getCentroid(ll node)
   {
     function<void(ll, ll)> get_subsize = [&](ll x, ll p)
@@ -52,36 +52,34 @@ struct CentroidDecomp
     };
     return dfs(node, -1);
   }
- 
+
   void decompose_graph()
   {
     function<void(ll)> decompose = [&](ll x)
     {
       ll centroid_now = getCentroid(x);
       marked[centroid_now] = 1;
- 
-      ll maxdep = -1;
 
-      
       // do computations here
 
-      levelCentroids[centroid_now].push_back({centroid_now,0});
-      
-      function<void(ll,ll,ll)> compute = [&](ll xx,ll p,ll dep)
+      levelCentroids[centroid_now].push_back({centroid_now, 0});
+
+      function<void(ll, ll, ll)> compute = [&](ll xx, ll p, ll dep)
       {
-        // debug("in node ",xx+1);
-        levelCentroids[xx].push_back({centroid_now,dep});
-        for(auto it:v[xx])
+        levelCentroids[xx].push_back({centroid_now, dep});
+        for (auto it : v[xx])
         {
-          if(it == p || marked[it])continue;
-          compute(it,xx,dep+1);
+          if (it == p || marked[it])
+            continue;
+          compute(it, xx, dep + 1);
         }
       };
 
-      for(auto it: v[centroid_now])
+      for (auto it : v[centroid_now])
       {
-        if(marked[it])continue;
-        compute(it,-1,1);
+        if (marked[it])
+          continue;
+        compute(it, -1, 1);
       }
 
       for (auto next : v[centroid_now])
