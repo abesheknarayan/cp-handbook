@@ -13,3 +13,8 @@ Contains some tricks for combinatorics
 
 
 3. simplifying bigger powers using a^(phi(p)-1) == 1 mod p , find just the remainder
+
+4. Fibonacci number:
+   4.1 No of ways of partitioning n into odd numbers [1,1,2,3,5,...]
+   
+

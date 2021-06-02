@@ -3,6 +3,15 @@ Contains stuff related to data structures
 
 1. HLD orz what a technique
 
+   in HLD actually for problems related to edges its better to use lca and find somethings --> TODO or try to do in pashka style 
+   in problems with nodes values we can use our HLD template
+
+   Some nice HLD implementation problems
+
+      https://www.spoj.com/problems/ADAVISIT/ --> stupid SPOJ problems always strict limits but nice idea
+      
+
+
 2. [HLD vs CD]:
        
         When given 2 nodes in a tree as query (function maybe something associatve) and some changes happen in the tree like modifying value of node , hld is used.
@@ -10,3 +19,4 @@ Contains stuff related to data structures
         Centroid Decomposition is used when you are given a node and a parameter (like distance or something) and to find function of all nodes satifying
         the given condition
         
+      
