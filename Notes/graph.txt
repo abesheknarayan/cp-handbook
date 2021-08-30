@@ -38,3 +38,4 @@ Contains some standard graph tricks
 4. [VVVV IMP]: In small to merge technique you have to be very careful always store the answer of larger set while swapping , dont recompute the answer with merged set
    In the same technique sometimes use bitset (when some checking for palindrome comes) as it will reduce memory hugely
 
+5. sum of max distance between all pairs of nodes --> sort edges and dsu from lowest weight.

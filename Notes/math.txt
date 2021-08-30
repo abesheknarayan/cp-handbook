@@ -1,0 +1,8 @@
+contains some standard math / Number Theory tricks
+
+
+
+1. Finding all prime factors of a number
+
+    standard o(sqrt(x)) possible
+    if we need precomputation , then find all primes <= sqrt(x) and then use those primes to deduce the prime factors
