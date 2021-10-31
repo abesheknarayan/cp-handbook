@@ -20,6 +20,7 @@ Contains some standard graph tricks
 
 6. [VVVVVVVVVV IMP]: Sometimes in graph questions involving finding distances/any associative function we can use "BINARY JUMPS METHOD" even if graph contains cycles.
 
+7. Adding some number to all edges to get target value for all nodes, think in lines of bipartite graph
 
 ////////////////////////////////////////////////////////////
 //                                                        //

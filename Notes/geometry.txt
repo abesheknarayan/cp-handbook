@@ -1,0 +1,13 @@
+Contains some geometry stuff and tricks
+
+1. Sometimes geometry preprocessing / counting can be done using bitsets as well as it will reduce time complexity by 32
+
+2. Cross product : right hand thumb rule
+
+    + ve : anti clockwise
+    - ve : clockwise
+
+3. Finding no of special points inside convex polygon 
+
+    ** : one method is to find all left points of those edges using bitset and AND them
+    ** : another method is the triangle area method (Link : https://discuss.codechef.com/t/chefpoly-editorial/12230)
